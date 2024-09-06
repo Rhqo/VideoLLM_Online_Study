@@ -181,32 +181,45 @@ Video frame encoder는 CLIP ViT-L (307M)을 사용하며, 이는 7B/8B의 언어
 이를 해결하기 위해,
 - Encoding과 Decoding 과정 병렬화 : 빠른 visual 인코더는 느린 language 모델을 기다릴 필요 없이 계속해서 비디오 프레임을 인코딩하고 이를 queue에 추가
 - FIFO queue를 설정 : 언어 모델은 이전 프레임 디코딩을 완료하면 큐에서 프레임 토큰을 가져오고, 이를 통해 비디오 인코딩이 지연되지 않도록 한다.
-# 4. Experiments
 
-## 4.1 Implementation Details
+## My Inference Results
 
-## 4.2 Evaluation Setting
+## Json format
 
-### Datasets
+```json
+{
+	"video_path": "demo/assets/cooking.mp4",
+	"frame_fps": 2,
+	"conversation": [
+		{
+			"role": "user",
+			"content": "(Video Time = 0.0s) User: Please narrate the video in real time.",
+			"time": 0.0,
+			"fps": 1.5757373570706183,
+			"cost": 0.6346235275268555
+		},
+		{
+			"role": "assistant",
+			"content": "(Video Time = 0.0s) Assistant: You walk around the room.",
+			"time": 0.0,
+			"fps": 1.5757373570706183,
+			"cost": 0.6346235275268555
+		},
+...,
+	]
+}
 
-### Evaluation metrics
+```
 
-### Baselines
+# Cooking
+![cooking.mp4](./assets/cooking.mp4)
 
-## 4.3 Ablation Study
+---
 
-### Learning Method
+# Advertise
+![adv.mp4](./assets/adv.mp4)
 
-### Streaming Loss
+---
 
-### Inference Efficiency
-
-## 4.4 Results
-
-### Offline Language Modeling
-
-### Comparison between Model Variants
-
-### Visualization
-
-# 5. Conclusion
+# Stopmotion
+![stopmotion.mp4](./assets/stopmotion.mp4)

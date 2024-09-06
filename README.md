@@ -45,16 +45,6 @@ Video streaming dialogue를 evaluate하기 위해 language perplexity metric과 
 VideoLLM online model은 3가지의 metric에서 높은 속도를 보이며, 적은 메모리로도 사용이 가능했다. 
 또한 다른 short-term이나 long-term등과 같은 offline benchmark에서도 좋은 성능을 보였다.
 
-# 2. Related Work
-
-### Visual Dialogue
-
-### Large Multimodal Models
-
-### Online Video Understanding
-
-### Efficient Token Decoding
-
 # 3. Method
 
 ## 3.1 Video Streaming Dialogue
@@ -112,15 +102,11 @@ Inference 중에는,
   -> 이 작업은 next token prediction과는 다르지만, autoregressive loss에는 영향을 미칠 수 있게 한다.
 
 이 접근 방식에서는 EOS 토큰이 기존 언어 모델에서 사용되는 실제 EOS 토큰(e.g., `</s>`)에 국한되지 않는다. 대신 시스템 프롬프트에 명시된 경우 어떤 토큰이라도 사용 가능하며, 단순화를 위해 "Streaming EOS"라는 용어를 사용하는 것이다.
-## 3.2 Data
-
-### Online Annotations to Video Streaming Dialogue
-
-### Offline Annotations to Video Streaming Dialogue
 
 ## 3.3 Model Training
 
 ### Model Architecture
+![0.png](./assets/VideoLLM-online_0.png)
 
 모델은 다음과 같은 세 가지 주요 구성 요소로 이루어져 있다.
 
